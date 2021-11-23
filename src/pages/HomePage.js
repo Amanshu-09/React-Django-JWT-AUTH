@@ -30,7 +30,7 @@ const HomePage = () => {
 
 
     let getRecords = async() =>{
-        let response = await fetch('http://127.0.0.1:8000/api/', {
+        let response = await fetch('https://react-django-jwt-auth-backend.herokuapp.com/api/', {
             method:'GET',
             headers:{
                 'Content-Type':'application/json',
@@ -48,7 +48,7 @@ const HomePage = () => {
     }
 
     let deleterecord = async () => {
-        let data = await fetch(`http://127.0.0.1:8000/api/delete/${id}/`, {
+        let data = await fetch(`https://react-django-jwt-auth-backend.herokuapp.com/api/delete/${id}/`, {
             method:'DELETE',
             headers:{'Content-Type':'application/json',
             'Authorization':'Bearer ' + String(authTokens.access)},
@@ -66,7 +66,7 @@ const HomePage = () => {
     }
 
     let updateUser = async()=>{
-        let data = await fetch(`http://127.0.0.1:8000/api/update/${id}/`,{
+        let data = await fetch(`https://react-django-jwt-auth-backend.herokuapp.com/api/update/${id}/`,{
             method:'PUT',
             headers:{'Content-Type':'application/json',
             'Authorization':'Bearer ' + String(authTokens.access)},
